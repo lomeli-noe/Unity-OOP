@@ -8,8 +8,7 @@ public class SceneManagement : MonoBehaviour
 {
     public void LoadScene()
     {
-        //SceneManager.LoadScene(1);
-        Debug.Log("Test");
+        SceneManager.LoadScene(1);
     }
 
     public void Exit()
