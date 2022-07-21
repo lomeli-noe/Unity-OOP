@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Square : Shape
+public class Sphere : Shape
 {
     protected override void Greeting()
     {
 
-        Debug.Log("This is a square!");
+        Debug.Log("This is a sphere!");
     }
 
     private void OnMouseDown()
