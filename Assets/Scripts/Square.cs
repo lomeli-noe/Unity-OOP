@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+// INHERITANCE
 public class Square : Shape
 {
     private string shapeName = "Cosmic Cube";
@@ -16,9 +17,9 @@ public class Square : Shape
     {
         nameText = textObj.GetComponent<TextMeshProUGUI>();
         cubeSide = gameObject.GetComponent<BoxCollider>().size.x;
-
     }
 
+    // POLYMORPHISM
     protected override void DisplayInfo()
     {
         textObj.gameObject.SetActive(true);
@@ -27,6 +28,7 @@ public class Square : Shape
 
     private void OnMouseDown()
     {
+        // ABSTRACTION
         DisplayInfo();
     }
 
@@ -37,6 +39,7 @@ public class Square : Shape
 
     public string CubeName
     {
+        // ENCAPSULATION
         get { return shapeName; }
     }
 

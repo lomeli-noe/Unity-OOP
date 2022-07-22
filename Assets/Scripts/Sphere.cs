@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// INHERITANCE
 public class Sphere : Shape
 {
 
@@ -19,7 +20,7 @@ public class Sphere : Shape
         radius = gameObject.GetComponent<SphereCollider>().radius;
     }
 
-
+    // POLYMORPHISM
     protected override void DisplayInfo()
     {
         textObj.gameObject.SetActive(true);
@@ -28,6 +29,7 @@ public class Sphere : Shape
 
     private void OnMouseDown()
     {
+        // ABSTRACTION
         DisplayInfo();
     }
 
@@ -38,6 +40,7 @@ public class Sphere : Shape
 
     public string SphereName
     {
+        // ENCAPSULATION
         get { return shapeName; }
     }
 
