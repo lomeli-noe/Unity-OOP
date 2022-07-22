@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Shape : MonoBehaviour
 {
-    protected abstract void Greeting();
+    protected abstract void DisplayInfo();
 }

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
-public class Square : Shape
+public class Capsule : Shape
 {
-    private string shapeName = "Cosmic Cube";
+    private string shapeName = "Cool Capsule";
     private float area;
-    private float cubeSide;
+    private float radius;
+    private float height;
 
     public GameObject textObj;
     private TextMeshProUGUI nameText;
@@ -15,14 +16,14 @@ public class Square : Shape
     private void Start()
     {
         nameText = textObj.GetComponent<TextMeshProUGUI>();
-        cubeSide = gameObject.GetComponent<BoxCollider>().size.x;
-
+        radius = gameObject.GetComponent<CapsuleCollider>().radius;
+        height = gameObject.GetComponent<CapsuleCollider>().height;
     }
 
     protected override void DisplayInfo()
     {
         textObj.gameObject.SetActive(true);
-        nameText.text = "Name: " + CubeName + "\nArea: " + CubeArea();
+        nameText.text = "Name: " + CapsuleName + "\nArea: " + CapsuleArea();
     }
 
     private void OnMouseDown()
@@ -35,14 +36,14 @@ public class Square : Shape
         textObj.gameObject.SetActive(false);
     }
 
-    public string CubeName
+    public string CapsuleName
     {
         get { return shapeName; }
     }
 
-    private string CubeArea()
+    private string CapsuleArea()
     {
-        area = 6 * (cubeSide * cubeSide);
+        area = 2 * Mathf.PI * (radius * height);
         return area.ToString("0.00") + "sq.m";
     }
 }
