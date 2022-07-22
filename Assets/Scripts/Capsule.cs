@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// INHERITANCE
 public class Capsule : Shape
 {
     private string shapeName = "Cool Capsule";
@@ -20,6 +21,7 @@ public class Capsule : Shape
         height = gameObject.GetComponent<CapsuleCollider>().height;
     }
 
+    // POLYMORPHISM
     protected override void DisplayInfo()
     {
         textObj.gameObject.SetActive(true);
@@ -28,6 +30,7 @@ public class Capsule : Shape
 
     private void OnMouseDown()
     {
+        // ABSTRACTION
         DisplayInfo();
     }
 
@@ -38,6 +41,7 @@ public class Capsule : Shape
 
     public string CapsuleName
     {
+        // ENCAPSULATION
         get { return shapeName; }
     }
 
